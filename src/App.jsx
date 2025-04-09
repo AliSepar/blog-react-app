@@ -37,9 +37,8 @@ function App() {
         <Footer />
       </div>
     </div>
-  ) : (
-    <LoadingUi />
-  );
+  ) : // <LoadingUi />
+  null;
 }
 
 export default App;
