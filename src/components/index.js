@@ -9,6 +9,7 @@ import PostCard from "./PostCard";
 import Button from "./ui/Button";
 import AuthLayout from "./AuthLayout";
 import SignUp from "./SignUp";
+import RTE from "./RTE";
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   Button,
   AuthLayout,
   SignUp,
+  RTE,
 };
