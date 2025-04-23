@@ -56,32 +56,36 @@ function SignUp() {
               label="Name: "
               type="text"
               placeholder="Enter your name"
-              {...register("name",{
+              {...register("name", {
                 required: true,
               })}
             />
 
-           <Input
-                label="Email: "
-                placeholder="Enter your Email"
-                type="email"
-                {...register("email"), {
-                  required:true,
-                  validate:{
-                    matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                              "Email address must be a valid address", // this is a  regexr pattern to check the text is email of not (regexr.com)
-                    }
-                }}
-                />
-            <Input 
-                label="Password: " 
-                placeholder="Enter your Password" 
-                type="password" 
-                {...register("password", {
-                required:true,
-            })}/>
+            <Input
+              label="Email: "
+              placeholder="Enter your Email"
+              type="email"
+              {...register("email", {
+                required: true,
+                validate: {
+                  matchPattern: (value) =>
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                    "Email address must be a valid address", // this is a  regexr pattern to check the text is email of not (regexr.com)
+                },
+              })}
+            />
+            <Input
+              label="Password: "
+              placeholder="Enter your Password"
+              type="password"
+              {...register("password", {
+                required: true,
+              })}
+            />
 
-            <Button type="submit" className="w-full">Create Account</Button>
+            <Button type="submit" className="w-full">
+              Create Account
+            </Button>
           </div>
         </form>
       </div>

@@ -10,6 +10,9 @@ import Button from "./ui/Button";
 import AuthLayout from "./AuthLayout";
 import SignUp from "./SignUp";
 import RTE from "./RTE";
+import PostForm from "./post-form/PostForm";
+import Login from "./Login";
+// import Post from "./Post";
 
 export {
   Header,
@@ -23,5 +26,8 @@ export {
   Button,
   AuthLayout,
   SignUp,
+  Login,
   RTE,
+  PostForm,
+  // Post,
 };

@@ -1,6 +1,8 @@
-import { Editor } from "@tinymce/tinymce-react";
 import React from "react";
+import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
+// import "./RTELinks.js";
+import conf from "../conf/conf.js";
 
 export default function RTE({ name, control, label, defaultValue = "" }) {
   // control will come form react hook form and its responsible to take all the state of this to the form which is been called
@@ -22,11 +24,13 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
   return (
     <div className="w-full">
       {label && <label className="inline-block mb-1 pl-1">{label}</label>}
+
       <Controller
         name={name || "content"}
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
+            apiKey={conf.tinyMCEAPIKEY}
             initialValue={defaultValue}
             init={{
               initialValue: defaultValue,

@@ -38,7 +38,7 @@ export class Service {
   }
 
   //   we separate the slug to get access to the document id easer
-  async updataPost(slug, { title, content, featuredImage, status }) {
+  async updatePost(slug, { title, content, featuredImage, status }) {
     try {
       return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
@@ -119,7 +119,7 @@ export class Service {
     try {
       return await this.bucket.createFile(
         conf.appwriteBucketId,
-        ID.unique,
+        ID.unique(),
         file
       );
     } catch (error) {
@@ -141,7 +141,8 @@ export class Service {
 
   //file preview specific
   getFilePreview(fileId) {
-    return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+    // return this.bucket.getFilePreview(conf.appwriteBucketId, fileId); // can't access getFilePreview in free plan
+    return this.bucket.getFileView(conf.appwriteBucketId, fileId);
   }
 }
 
